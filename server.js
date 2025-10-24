@@ -19,11 +19,13 @@ const geminiModels = [
   "gemini-1.5-flash-001"     // Specific version
 ];
 
-// Middleware - Allow all origins
+// Updated CORS configuration
 app.use(cors({
   origin: [
-    'http://localhost:5173',
-    'https://your-frontend-domain.vercel.app' // Will update after deployment
+    'http://localhost:4173',  // Add this - your current dev server
+    'http://localhost:5173',  // Vite default
+    'https://pwalib-frontend.vercel.app', // Your actual Vercel domain
+    'https://your-actual-frontend-domain.vercel.app' // Replace with your real domain
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
